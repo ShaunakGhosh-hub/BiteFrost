@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crucify - Download</title>
+    <link rel="stylesheet" href="crucify.css">
+</head>
+<body class="horror-theme">
+    <div class="container">
+        <h1 class="flicker">Crucify</h1>
+        <p class="tagline">"Do you dare to enter the darkness?"</p>
+
+        <!-- Game Trailer -->
+        <div class="trailer">
+    	<video width="720" height="315" controls>
+    <source src="Crucify_v.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+        </div>
+
+        <!-- Download Button -->
+        <a href="https://drive.google.com/file/d/1UUdnUjnf0PL2qgApvMztYtbnbdF0fwVr/view?usp=drive_link" class="download-btn">Download Crucify</a>
+        <!-- Jumpscare Image -->
+        <img src="Ghost.jpg" class="jumpscare" alt="Scary Face">
+        <audio id="scream" src="jumpscare-94984.mp3" preload="auto"></audio>
+
+        
+
+
+    </div>
+    <script>
+        const video = document.querySelector('video');
+        const jumpscare = document.querySelector('.jumpscare');
+        const scream = document.getElementById('scream');
+      
+        video.addEventListener('play', () => {
+          const delay = Math.random() * 5000 + 5000; // Random between 5-10s
+      
+          setTimeout(() => {
+            jumpscare.style.display = 'block';
+            scream.play();
+          }, delay);
+        });
+      
+        // Click to dismiss the jumpscare
+        jumpscare.addEventListener('click', () => {
+          jumpscare.style.display = 'none';
+          scream.pause();
+          scream.currentTime = 0;
+        });
+      </script>
+      <footer>
+        <p>&copy; 2025 ShaunakGhosh-Hub.All Rights Reserved.</p>
+        <div class="social">
+            <a href="https://bit.ly/3xgrWpS"><i class='bx bxl-gmail'></i></a>
+            <a href="https://www.linkedin.com/in/shaunak-ghosh-04b603324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.instagram.com/shaunak_ghosh_/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://github.com/ShaunakGhosh-hub"><i class='bx bxl-github'></i></a>
+        </div>
+    </footer>
+      
+</body>
+</html>

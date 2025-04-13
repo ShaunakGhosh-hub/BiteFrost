@@ -1,0 +1,194 @@
+/* === Base Horror Theme === */
+body{
+    background-color: #191212;
+}
+.horror-theme {
+    background: url('a.jpg') no-repeat center center / cover;
+    color: #d21717;
+    font-family: 'Creepster', cursive;
+    text-align: center;
+    padding: 50px 20px;
+
+    /* Ensure it covers full viewport height */
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+.jumpscare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    z-index: 9999;
+}
+
+
+/* === Glitchy Title === */
+.glitch {
+    font-size: 50px;
+    color: rgba(239, 59, 9, 0.874);
+    text-shadow: 4px 4px 10px rgb(26, 166, 54);
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0%   { text-shadow: 4px 4px rgb(186, 233, 205); }
+    50%  { text-shadow: -4px -4px red; }
+    100% { text-shadow: 4px 4px rgb(200, 15, 126); }
+}
+
+/* === Tagline === */
+.tagline {
+    font-size: 20px;
+    font-style: italic;
+    color: #f1e7e7;
+    text-shadow: 0 0 10px rgb(238, 111, 15);
+    margin-bottom: 20px;
+}
+
+/* === Trailer Container === */
+.trailer {
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 800px;
+    border: 3px solid rgb(245, 20, 20);
+    box-shadow: 0 0 20px rgb(255, 123, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* === Responsive Video === */
+.trailer video,
+.responsive-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* === Download Button === */
+.download-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background: rgb(58, 198, 105);
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px red;
+    transition: all 0.3s ease-in-out;
+}
+
+.download-btn:hover {
+    background: rgb(12, 77, 5);
+    box-shadow: 0 0 20px rgb(7, 136, 50);
+}
+
+/* === Flicker Text === */
+.flicker {
+    animation: flickerAnimation 2s infinite;
+    color: #ef0202;
+    text-shadow: 0 0 5px #191212, 0 0 10px #ebff10;
+}
+.social a {
+  font-size: 27px;
+  margin: 0.5rem;
+}
+
+.social a .bx {
+  padding: 5px;
+  color: #fff;
+  background: #000000;
+  border-radius: 50%;
+}
+
+.social a .bx:hover {
+  background: var(--main-color);
+}
+@keyframes flickerAnimation {
+    0%, 30%, 100% { opacity: 1; }
+    5%  { opacity: 0.4; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.2; }
+    25% { opacity: 0.5; }
+}
+
+/* === Background Flicker Overlay === */
+.overlay {
+    animation: bgFlicker 5s infinite;
+}
+
+@keyframes bgFlicker {
+    0%, 100% { background-color: rgba(0, 0, 0, 0.6); }
+    50%      { background-color: rgba(0, 0, 0, 0.75); }
+}
+
+/* === Tablet & Small Screen Optimizations === */
+@media (max-width: 768px) {
+    .horror-theme {
+        margin-top: 40%;
+        padding: 30px 15px;
+    }
+
+    .glitch {
+        font-size: 36px;
+        text-shadow: 2px 2px 6px rgb(26, 166, 54);
+    }
+
+    .tagline {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .trailer {
+        padding: 8px;
+        border-width: 2px;
+        width: 100%;
+    }
+
+    .download-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .flicker {
+        font-size: 16px;
+    }
+
+    /* Adjust flicker intensity */
+    @keyframes bgFlicker {
+        0%, 100% { background-color: rgba(0, 0, 0, 0.6); }
+        50%      { background-color: rgba(0, 0, 0, 0.65); }
+    }
+
+    /* Softer glitch effect */
+    @keyframes glitch {
+        0%   { text-shadow: 2px 2px rgba(133, 0, 20, 0.507); }
+        50%  { text-shadow: -2px -2px red; }
+        100% { text-shadow: 2px 2px rgb(200, 15, 126); }
+    }
+}
+
+/* === Phones & Extra Small Screens (<480px) === */
+@media (max-width: 480px) {
+    .glitch {
+        font-size: 26px;
+    }
+
+    .tagline,
+    .flicker {
+        font-size: 14px;
+    }
+
+    .download-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
